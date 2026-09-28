@@ -8,32 +8,18 @@ package com.maycat.kucingku;
  *
  * @author Shien
  */
+public class Kucing extends Hewan {
 
-public class Kucing {
-
-    private String nama;
     private String jenis;
     private String warna;
-    private int umur;
     private String makananFavorit;
 
     public Kucing(String nama, String jenis, String warna, int umur, String makananFavorit) {
-        this.nama = nama;
+        super(nama, umur);
         this.jenis = jenis;
         this.warna = warna;
-        this.umur = umur;
         this.makananFavorit = makananFavorit;
     }
-
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
 
     public String getJenis() {
         return jenis;
@@ -51,21 +37,6 @@ public class Kucing {
         this.warna = warna;
     }
 
-    // Getter dan Setter umur
-    public int getUmur() {
-        return umur;
-    }
-
-    public void setUmur(int umur) {
-        // Validasi umur
-        if (umur >= 0) {
-            this.umur = umur;
-        } else {
-            System.out.println("Umur tidak valid! Umur tidak boleh kurang dari 0.");
-        }
-    }
-
-
     public String getMakananFavorit() {
         return makananFavorit;
     }
@@ -75,14 +46,15 @@ public class Kucing {
     }
 
     public void tampilkanData() {
-        System.out.println("Nama            : " + nama);
+        System.out.println("Nama            : " + getNama());
         System.out.println("Jenis           : " + jenis);
         System.out.println("Warna           : " + warna);
-        System.out.println("Umur            : " + umur + " tahun");
+        System.out.println("Umur            : " + getUmur() + " tahun");
         System.out.println("Makanan Favorit : " + makananFavorit);
     }
 
+    @Override
     public void suara() {
-        System.out.println(nama + " berkata: Meong!");
+        System.out.println(getNama() + " berkata: Meong!");
     }
 }

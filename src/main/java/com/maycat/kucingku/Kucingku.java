@@ -8,6 +8,7 @@ package com.maycat.kucingku;
  *
  * @author Shien
  */
+
 public class Kucingku {
 
     public static void main(String[] args) {
@@ -28,7 +29,7 @@ public class Kucingku {
                 "Ikan"
         );
 
-        System.out.println("=== DATA AWAL KUCING 1 ===");
+        System.out.println("DATA AWAL KUCING 1");
         System.out.println("Nama            : " + kucing1.getNama());
         System.out.println("Jenis           : " + kucing1.getJenis());
         System.out.println("Warna           : " + kucing1.getWarna());
@@ -37,7 +38,7 @@ public class Kucingku {
 
         System.out.println();
 
-        System.out.println("=== MENGUBAH DATA KUCING 1 ===");
+        System.out.println("MENGUBAH DATA KUCING 1 ");
 
         kucing1.setNama("Milo Junior");
         kucing1.setJenis("British Shorthair");
@@ -58,13 +59,13 @@ public class Kucingku {
 
         System.out.println();
 
-        System.out.println("=== DATA AKHIR KUCING 1 ===");
+        System.out.println("DATA AKHIR KUCING 1");
         kucing1.tampilkanData();
         kucing1.suara();
 
         System.out.println();
 
-        System.out.println("=== DATA KUCING 2 ===");
+        System.out.println("DATA KUCING 2");
         kucing2.tampilkanData();
         kucing2.suara();
     }
