@@ -14,11 +14,14 @@ public class Kucing extends Hewan {
     private String warna;
     private String makananFavorit;
 
-    public Kucing(String nama, String jenis, String warna, int umur, String makananFavorit) {
+    public Kucing(String nama, String jenis, String warna,
+                  int umur, String makananFavorit) {
+
         super(nama, umur);
-        this.jenis = jenis;
-        this.warna = warna;
-        this.makananFavorit = makananFavorit;
+
+        setJenis(jenis);
+        setWarna(warna);
+        setMakananFavorit(makananFavorit);
     }
 
     public String getJenis() {
@@ -26,7 +29,11 @@ public class Kucing extends Hewan {
     }
 
     public void setJenis(String jenis) {
-        this.jenis = jenis;
+        if (jenis != null && !jenis.trim().isEmpty()) {
+            this.jenis = jenis;
+        } else {
+            System.out.println("Jenis tidak valid! Jenis tidak boleh kosong.");
+        }
     }
 
     public String getWarna() {
@@ -34,7 +41,11 @@ public class Kucing extends Hewan {
     }
 
     public void setWarna(String warna) {
-        this.warna = warna;
+        if (warna != null && !warna.trim().isEmpty()) {
+            this.warna = warna;
+        } else {
+            System.out.println("Warna tidak valid! Warna tidak boleh kosong.");
+        }
     }
 
     public String getMakananFavorit() {
@@ -42,15 +53,21 @@ public class Kucing extends Hewan {
     }
 
     public void setMakananFavorit(String makananFavorit) {
-        this.makananFavorit = makananFavorit;
+        if (makananFavorit != null && !makananFavorit.trim().isEmpty()) {
+            this.makananFavorit = makananFavorit;
+        } else {
+            System.out.println(
+                "Makanan favorit tidak valid! Tidak boleh kosong."
+            );
+        }
     }
 
     public void tampilkanData() {
         System.out.println("Nama            : " + getNama());
-        System.out.println("Jenis           : " + jenis);
-        System.out.println("Warna           : " + warna);
+        System.out.println("Jenis           : " + getJenis());
+        System.out.println("Warna           : " + getWarna());
         System.out.println("Umur            : " + getUmur() + " tahun");
-        System.out.println("Makanan Favorit : " + makananFavorit);
+        System.out.println("Makanan Favorit : " + getMakananFavorit());
     }
 
     @Override

@@ -15,8 +15,8 @@ public class Hewan {
     private int umur;
 
     public Hewan(String nama, int umur) {
-        this.nama = nama;
-        this.umur = umur;
+        setNama(nama);
+        setUmur(umur);
     }
 
     public String getNama() {
@@ -24,7 +24,11 @@ public class Hewan {
     }
 
     public void setNama(String nama) {
-        this.nama = nama;
+        if (nama != null && !nama.trim().isEmpty()) {
+            this.nama = nama;
+        } else {
+            System.out.println("Nama tidak valid! Nama tidak boleh kosong.");
+        }
     }
 
     public int getUmur() {
@@ -39,6 +43,7 @@ public class Hewan {
         }
     }
 
+    // Method suara
     public void suara() {
         System.out.println("Hewan mengeluarkan suara.");
     }
